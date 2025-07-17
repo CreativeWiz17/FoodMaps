@@ -55,8 +55,6 @@ map_style = st.sidebar.selectbox("🗺️ Map Style",
     "OpenStreetMap",
     "CartoDB positron",
     "CartoDB dark_matter",
-    "Stadia.AlidadeSmoothDark",
-    "Jawg.Matrix", 
     "Esri.WorldImagery"
 ], 
 key="map_style_select")
