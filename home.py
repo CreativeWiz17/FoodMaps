@@ -82,7 +82,7 @@ folium.Marker(
 # Example: Add a circle for the Houston metro area (approximate)
 folium.Circle(
     location=houston_coords,
-    radius=30000,  # meters
+    radius=20000,  # meters
     color="blue",
     fill=True,
     fill_opacity=0.1,
