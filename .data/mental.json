@@ -1,0 +1,30 @@
+[
+  {
+    "name": "The Menninger Clinic",
+    "address": "12301 Main St, Houston, TX 77035",
+    "description": "Inpatient and outpatient psychiatric care, addiction treatment, trauma recovery",
+    "lat": 29.6300,
+    "lon": -95.4780
+  },
+  {
+    "name": "UTHealth Harris County Psychiatric Center",
+    "address": "2800 S MacGregor Way, Houston, TX 77021",
+    "description": "Largest inpatient psychiatric provider in Houston; 24/7 crisis care",
+    "lat": 29.7100,
+    "lon": -95.3620
+  },
+  {
+    "name": "Cypress Creek Hospital",
+    "address": "17750 Cali Dr, Houston, TX 77090",
+    "description": "Inpatient psychiatric and substance abuse treatment for teens & adults",
+    "lat": 30.0150,
+    "lon": -95.4510
+  },
+  {
+    "name": "Houston Behavioral Healthcare Hospital",
+    "address": "2801 Gessner Rd, Houston, TX 77080",
+    "description": "Inpatient & outpatient care, detox, adolescent services",
+    "lat": 29.8290,
+    "lon": -95.5390
+  }
+]

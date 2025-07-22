@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Houston Community College – Adult Education",
+    "address": "3100 Main St, Houston, TX 77002",
+    "description": "ESL, GED prep, workforce training, career pathways",
+    "lat": 29.7365,
+    "lon": -95.3810
+  },
+  {
+    "name": "Harris County Public Library – Adult Literacy",
+    "address": "5749 S Loop E, Houston, TX 77033",
+    "description": "ESL, citizenship, high school diploma, one-on-one tutoring",
+    "lat": 29.6780,
+    "lon": -95.3080
+  },
+  {
+    "name": "Barbara Bush Houston Literacy Foundation – STAR Program",
+    "address": "Citywide",
+    "description": "Reading, writing, GED, ESL, digital literacy",
+    "lat": 29.7604,
+    "lon": -95.3698
+  },
+  {
+    "name": "AVANCE – Houston",
+    "address": "4301 Dacoma St, Houston, TX 77092",
+    "description": "Basic skills, ESL, career services, literacy civics",
+    "lat": 29.8130,
+    "lon": -95.4570
+  }
+]

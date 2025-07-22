@@ -3,6 +3,7 @@
 import streamlit as st
 import folium
 from streamlit_folium import st_folium
+import json
 
 # --- Page Configuration ---
 st.set_page_config(
@@ -38,7 +39,7 @@ st.markdown("""
 
 # Set the title of the web app
 st.markdown('<div class="main-title">🥫️ Houston FoodMap</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Find the help you need with deserve</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Find the help you deserve</div>', unsafe_allow_html=True)
 
 # Add a sidebar for user controls (optional)
 st.sidebar.header("🛠️ Map Controls")
@@ -59,9 +60,19 @@ map_style = st.sidebar.selectbox("🗺️ Map Style",
 ], 
 key="map_style_select")
 
-
 # Sidebar: Choose district to highlight
 district = st.sidebar.selectbox("🏙️ Highlight District", ["None", "Downtown", "Midtown", "Museum District"], key="district_select")
+
+# Sidebar: Choose category to display
+category = st.sidebar.selectbox("📂 Show Category", ["Food", "Mental Health", "Skills"], key="category_select")
+
+# Load data from JSON files inside the .data folder
+with open(".data/food.json", "r") as f:
+    food_data = json.load(f)
+with open(".data/skills.json", "r") as f:
+    adult_data = json.load(f)
+with open(".data/mental.json", "r") as f:
+    mental_data = json.load(f)
 
 # Create a Folium map centered on Houston with a softer tile style
 m = folium.Map(
@@ -73,9 +84,9 @@ m = folium.Map(
 # Example: Add a marker for downtown Houston with a softer color (green)
 folium.Marker(
     location=houston_coords,
-    popup="Downtown Houston",
-    tooltip="Click for more info",
-    icon=folium.Icon(color="red", icon="info-sign")  # How will signs look?
+    popup="Ion Houston Office",
+    tooltip="BAM Houston Location",
+    icon=folium.Icon(color="blue", icon="info-sign")  # How will signs look?
 ).add_to(m)
 
 # You can add more markers or features here
@@ -89,7 +100,7 @@ folium.Circle(
     popup="Approximate Houston Metro Area"
 ).add_to(m)
 
-# Example: Highlight selected district with a circle marker
+# Example: Highlight selected district with a circle (fixed size that doesn't change with zoom)
 district_locations = {
     "Downtown": [29.7589, -95.3677],
     "Midtown": [29.7416, -95.3728],
@@ -97,15 +108,45 @@ district_locations = {
 }
 
 if district != "None":
-    folium.CircleMarker(
+    folium.Circle(
         location=district_locations[district],
-        radius=15,
+        radius=500,  # Fixed radius in meters
         color="green",
         fill=True,
         fill_color="green",
         fill_opacity=0.6,
         popup=f"{district} District"
     ).add_to(m)
+
+# 🥫 Food Donation Markers
+if category == "Food":
+    for place in food_data:
+        folium.Marker(
+            location=[place["lat"], place["lon"]],
+            popup=f"<b>{place['name']}</b><br>{place['address']}<br>{place['description']}",
+            tooltip="Food Donation",
+            icon=folium.Icon(color="red", icon="cutlery", prefix="fa")
+        ).add_to(m)
+
+# 📚 Adult Literacy Markers
+if category == "Skills":
+    for place in adult_data:
+        folium.Marker(
+            location=[place["lat"], place["lon"]],
+            popup=f"<b>{place['name']}</b><br>{place['address']}<br>{place['description']}",
+            tooltip="Adult Literacy",
+            icon=folium.Icon(color="orange", icon="book", prefix="fa")
+        ).add_to(m)
+
+# 🧠 Mental Health & Rehab Markers
+if category == "Mental Health":
+    for place in mental_data:
+        folium.Marker(
+            location=[place["lat"], place["lon"]],
+            popup=f"<b>{place['name']}</b><br>{place['address']}<br>{place['description']}",
+            tooltip="Mental Health",
+            icon=folium.Icon(color="purple", icon="medkit", prefix="fa")
+        ).add_to(m)
 
 # Display the map in Streamlit, filling most of the screen
 st_folium(m, width=1200, height=800)
