@@ -121,9 +121,16 @@ if district != "None":
 # 🥫 Food Donation Markers
 if category == "Food":
     for place in food_data:
+        popup_html = f"""
+        <div style="width: 250px;">
+            <strong>{place['name']}</strong><br>
+            <em>{place['address']}</em><br>
+            <p style="font-size: 14px;">{place['description']}</p>
+        </div>
+        """
         folium.Marker(
             location=[place["lat"], place["lon"]],
-            popup=f"<b>{place['name']}</b><br>{place['address']}<br>{place['description']}",
+            popup=folium.Popup(popup_html, max_width=300),
             tooltip="Food Donation",
             icon=folium.Icon(color="red", icon="cutlery", prefix="fa")
         ).add_to(m)
@@ -131,9 +138,16 @@ if category == "Food":
 # 📚 Adult Literacy Markers
 if category == "Skills":
     for place in adult_data:
+        popup_html = f"""
+        <div style="width: 250px;">
+            <strong>{place['name']}</strong><br>
+            <em>{place['address']}</em><br>
+            <p style="font-size: 14px;">{place['description']}</p>
+        </div>
+        """
         folium.Marker(
             location=[place["lat"], place["lon"]],
-            popup=f"<b>{place['name']}</b><br>{place['address']}<br>{place['description']}",
+            popup=folium.Popup(popup_html, max_width=300),
             tooltip="Adult Literacy",
             icon=folium.Icon(color="orange", icon="book", prefix="fa")
         ).add_to(m)
@@ -141,9 +155,16 @@ if category == "Skills":
 # 🧠 Mental Health & Rehab Markers
 if category == "Mental Health":
     for place in mental_data:
+        popup_html = f"""
+        <div style="width: 250px;">
+            <strong>{place['name']}</strong><br>
+            <em>{place['address']}</em><br>
+            <p style="font-size: 14px;">{place['description']}</p>
+        </div>
+        """
         folium.Marker(
             location=[place["lat"], place["lon"]],
-            popup=f"<b>{place['name']}</b><br>{place['address']}<br>{place['description']}",
+            popup=folium.Popup(popup_html, max_width=300),
             tooltip="Mental Health",
             icon=folium.Icon(color="purple", icon="medkit", prefix="fa")
         ).add_to(m)
