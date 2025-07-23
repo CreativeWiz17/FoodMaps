@@ -27,4 +27,47 @@
     "lat": 29.8130,
     "lon": -95.4570
   }
+
+  {
+    "name": "BakerRipley Adult Education",
+    "address": "3000 Aldine Mail Route Rd, Houston, TX 77039",
+    "description": "Basic literacy, ESL, citizenship, workforce prep, digital literacy",
+    "lat": 29.9200,
+    "lon": -95.3600
+  },
+  {
+    "name": "AAMA – Adelante Program",
+    "address": "6001 Gulf Fwy, Houston, TX 77023",
+    "description": "Basic skills, ESL, GED prep, college readiness",
+    "lat": 29.7110,
+    "lon": -95.3080
+  },
+  {
+    "name": "Career and Recovery Resources",
+    "address": "2525 San Jacinto St, Houston, TX 77002",
+    "description": "ESL, workplace literacy, GED prep, career services",
+    "lat": 29.7420,
+    "lon": -95.3730
+  },
+  {
+    "name": "Chinese Community Center",
+    "address": "9800 Town Park Dr, Houston, TX 77036",
+    "description": "ESL, wellness, caregiver support, citizenship classes",
+    "lat": 29.7000,
+    "lon": -95.5510
+  },
+  {
+    "name": "Community Family Centers",
+    "address": "7524 Avenue E, Houston, TX 77012",
+    "description": "Adult basic education, ESL, tutoring, GED prep",
+    "lat": 29.7260,
+    "lon": -95.2940
+  },
+  {
+    "name": "Brighter Future Inc.",
+    "address": "9888 Bissonnet St #285, Houston, TX 77036",
+    "description": "ESL, citizenship, GED prep, workplace literacy",
+    "lat": 29.6780,
+    "lon": -95.5510
+  }
 ]
