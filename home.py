@@ -45,7 +45,7 @@ st.markdown('<div class="subtitle">Find the help you deserve</div>', unsafe_allo
 st.sidebar.header("🛠️ Map Controls")
 
 # Set the default location to the center of Houston
-houston_coords = [29.7604, -95.3698]  # Latitude, Longitude
+houston_coords = [29.7345, -95.3819]  # Latitude, Longitude
 
 # Sidebar: Choose zoom level
 zoom = st.sidebar.slider("🔍 Zoom Level", min_value=12, max_value=20, value=14, key="zoom_slider")
@@ -64,7 +64,7 @@ key="map_style_select")
 district = st.sidebar.selectbox("🏙️ Highlight District", ["None", "Downtown", "Midtown", "Museum District"], key="district_select")
 
 # Sidebar: Choose category to display
-category = st.sidebar.selectbox("📂 Show Category", ["Food", "Mental Health", "Skills"], key="category_select")
+category = st.sidebar.selectbox("📂 Show Category", ["Food", "Mental Wellbeing", "Skills"], key="category_select")
 
 # Load data from JSON files inside the .data folder
 with open(".data/food.json", "r") as f:
