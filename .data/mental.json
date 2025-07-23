@@ -27,4 +27,47 @@
     "lat": 29.8290,
     "lon": -95.5390
   }
+
+  {
+    "name": "Kingwood Pines Hospital",
+    "address": "2001 Ladbrook Dr, Kingwood, TX 77339",
+    "description": "Inpatient psychiatric services for children, teens, and adults; substance abuse treatment",
+    "lat": 30.0510,
+    "lon": -95.2490
+  },
+  {
+    "name": "West Oaks Hospital",
+    "address": "6500 Hornwood Dr, Houston, TX 77074",
+    "description": "Psychiatric and substance abuse inpatient services for children, teens, and adults",
+    "lat": 29.7050,
+    "lon": -95.5070
+  },
+  {
+    "name": "Behavioral Hospital of Bellaire",
+    "address": "5314 Dashwood Dr, Houston, TX 77081",
+    "description": "Acute mental health treatment for adolescents, adults, and seniors; outpatient programs",
+    "lat": 29.7130,
+    "lon": -95.4830
+  },
+  {
+    "name": "The Harris Center – NeuroPsychiatric Center",
+    "address": "1502 Ben Taub Loop, Houston, TX 77030",
+    "description": "24/7 crisis hospital for psychiatric emergencies; part of Harris Center network",
+    "lat": 29.7135,
+    "lon": -95.3980
+  },
+  {
+    "name": "Intracare North Hospital",
+    "address": "1120 Cypress Station Dr, Houston, TX 77090",
+    "description": "Inpatient and outpatient psychiatric care for children, teens, and adults",
+    "lat": 30.0120,
+    "lon": -95.4380
+  },
+  {
+    "name": "Houston Methodist Behavioral Health",
+    "address": "6565 Fannin St, Houston, TX 77030",
+    "description": "Inpatient and outpatient psychiatric care; mood disorders, suicidality, and trauma",
+    "lat": 29.7100,
+    "lon": -95.3980
+  }
 ]
