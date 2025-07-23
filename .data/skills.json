@@ -1,72 +1,58 @@
 [
   {
-    "name": "Houston Community College – Adult Education",
-    "address": "3100 Main St, Houston, TX 77002",
-    "description": "ESL, GED prep, workforce training, career pathways",
-    "lat": 29.7365,
-    "lon": -95.3810
+    "name": "HCDE Adult Education",
+    "address": "6515 Irvington Blvd, Houston, TX 77022",
+    "description": "Free ESL, GED, and workforce training programs through Harris County Department of Education",
+    "lat": 29.8230,
+    "lon": -95.3580
   },
   {
-    "name": "Harris County Public Library – Adult Literacy",
-    "address": "5749 S Loop E, Houston, TX 77033",
-    "description": "ESL, citizenship, high school diploma, one-on-one tutoring",
-    "lat": 29.6780,
-    "lon": -95.3080
+    "name": "Harris County Department of Education",
+    "address": "6300 Irvington Blvd, Houston, TX 77022",
+    "description": "County education hub offering adult literacy, career pathways, and teacher support",
+    "lat": 29.8235,
+    "lon": -95.3570
   },
   {
-    "name": "Barbara Bush Houston Literacy Foundation – STAR Program",
-    "address": "Citywide",
-    "description": "Reading, writing, GED, ESL, digital literacy",
-    "lat": 29.7604,
-    "lon": -95.3698
+    "name": "Thomas A. Glazier Senior Education Center",
+    "address": "16600 Pine Forest Ln, Houston, TX 77084",
+    "description": "Free classes for seniors including computer literacy, health, and personal enrichment",
+    "lat": 29.8370,
+    "lon": -95.6640
   },
   {
-    "name": "AVANCE – Houston",
-    "address": "4301 Dacoma St, Houston, TX 77092",
-    "description": "Basic skills, ESL, career services, literacy civics",
-    "lat": 29.8130,
-    "lon": -95.4570
+    "name": "Abundant Life Center (ALC)",
+    "address": "9322 Eastex Fwy, Houston, TX 77093",
+    "description": "Adult education programs including ESL, GED prep, and life skills",
+    "lat": 29.8370,
+    "lon": -95.2950
   },
   {
-    "name": "BakerRipley Adult Education",
-    "address": "3000 Aldine Mail Route Rd, Houston, TX 77039",
-    "description": "Basic literacy, ESL, citizenship, workforce prep, digital literacy",
-    "lat": 29.9200,
-    "lon": -95.3600
+    "name": "Adult Education Center",
+    "address": "2246 Washington St, Pearland, TX 77581",
+    "description": "Free and low-cost adult education including GED, ESL, and career readiness",
+    "lat": 29.5630,
+    "lon": -95.2840
   },
   {
-    "name": "AAMA – Adelante Program",
-    "address": "6001 Gulf Fwy, Houston, TX 77023",
-    "description": "Basic skills, ESL, GED prep, college readiness",
-    "lat": 29.7110,
-    "lon": -95.3080
+    "name": "Continuing Edu Online",
+    "address": "6220 Westpark Dr Suite 149, Houston, TX 77057",
+    "description": "Online adult education center offering flexible ESL and workforce courses",
+    "lat": 29.7320,
+    "lon": -95.4890
   },
   {
-    "name": "Career and Recovery Resources",
-    "address": "2525 San Jacinto St, Houston, TX 77002",
-    "description": "ESL, workplace literacy, GED prep, career services",
-    "lat": 29.7420,
-    "lon": -95.3730
+    "name": "Spring Branch Adult Community Education",
+    "address": "2100 Shadowdale Dr, Houston, TX 77043",
+    "description": "Community-based adult education including ESL, GED, and enrichment classes",
+    "lat": 29.8140,
+    "lon": -95.5700
   },
   {
-    "name": "Chinese Community Center",
-    "address": "9800 Town Park Dr, Houston, TX 77036",
-    "description": "ESL, wellness, caregiver support, citizenship classes",
+    "name": "Nylander Adult Literacy Academy",
+    "address": "7122 Clarewood Dr, Houston, TX 77036",
+    "description": "One-on-one tutoring and adult literacy support for ESL and GED learners",
     "lat": 29.7000,
-    "lon": -95.5510
-  },
-  {
-    "name": "Community Family Centers",
-    "address": "7524 Avenue E, Houston, TX 77012",
-    "description": "Adult basic education, ESL, tutoring, GED prep",
-    "lat": 29.7260,
-    "lon": -95.2940
-  },
-  {
-    "name": "Brighter Future Inc.",
-    "address": "9888 Bissonnet St #285, Houston, TX 77036",
-    "description": "ESL, citizenship, GED prep, workplace literacy",
-    "lat": 29.6780,
-    "lon": -95.5510
+    "lon": -95.5350
   }
 ]
