@@ -175,7 +175,21 @@ if category == "Mental Wellbeing":
         ).add_to(m)
 
 # 📍 Live Location Marker
-loc = streamlit_js_eval(js_expressions="navigator.geolocation.getCurrentPosition", key="get_user_location")
+loc = streamlit_js_eval(
+    js_expressions="""
+    new Promise(function(resolve, reject) {
+        navigator.geolocation.getCurrentPosition(
+            function(pos) {
+                resolve({coords: {latitude: pos.coords.latitude, longitude: pos.coords.longitude}});
+            },
+            function(err) {
+                reject(err);
+            }
+        );
+    });
+    """,
+    key="get_user_location"
+)
 if loc and "coords" in loc:
     user_lat = loc["coords"]["latitude"]
     user_lon = loc["coords"]["longitude"]
