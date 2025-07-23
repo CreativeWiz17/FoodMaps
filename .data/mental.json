@@ -1,38 +1,58 @@
 [
   {
-    "name": "The Harris Center – NeuroPsychiatric Center",
-    "address": "1502 Ben Taub Loop, Houston, TX 77030",
-    "description": "24/7 crisis psychiatric hospital; accepts uninsured patients; part of Harris Center network",
-    "lat": 29.7135,
-    "lon": -95.3980
+    "name": "Houston Behavioral Healthcare Hospital",
+    "address": "2801 Gessner Rd, Houston, TX 77080",
+    "description": "Inpatient & outpatient care, detox, adolescent services",
+    "lat": 29.8290,
+    "lon": -95.5390
   },
   {
-    "name": "Ben Taub Hospital – Psychiatry Department",
-    "address": "1504 Taub Loop, Houston, TX 77030",
-    "description": "Public hospital with psychiatric services; part of Harris Health System; low-income access",
-    "lat": 29.7130,
-    "lon": -95.3995
-  },
-  {
-    "name": "UTHealth Harris County Psychiatric Center",
+    "name": "UTHealth Houston Harris County Psychiatric Center",
     "address": "2800 S MacGregor Way, Houston, TX 77021",
-    "description": "Largest inpatient psychiatric facility in Houston; publicly funded; accepts uninsured & Medicaid",
+    "description": "Largest inpatient psychiatric provider in Houston; 24/7 crisis care",
     "lat": 29.7100,
     "lon": -95.3620
   },
   {
-    "name": "Legacy Community Health – Behavioral Health",
-    "address": "3311 Richmond Ave, Houston, TX 77098",
-    "description": "Nonprofit clinic with counseling and psychiatry; sliding scale & Medicaid",
-    "lat": 29.7356,
-    "lon": -95.4250
+    "name": "Houston Medical Mental Health Clinic: Lucas Egebe, PMHNP-BC, DNP",
+    "address": "2833 Spears Rd Ste C, Houston, TX 77067",
+    "description": "Outpatient mental health care with high patient satisfaction",
+    "lat": 29.9490,
+    "lon": -95.4720
   },
   {
-    "name": "Hope and Healing Center & Institute",
-    "address": "717 Sage Rd, Houston, TX 77056",
-    "description": "Faith-based nonprofit offering free mental health support groups and therapy referrals",
-    "lat": 29.7602,
-    "lon": -95.4619
+    "name": "Northeast Mental Health Unit",
+    "address": "7200 N Loop E Fwy, Houston, TX 77028",
+    "description": "Community-based mental health services; outpatient care",
+    "lat": 29.8190,
+    "lon": -95.2950
+  },
+  {
+    "name": "Behavioral Hospital of Bellaire",
+    "address": "5314 Dashwood Dr, Houston, TX 77081",
+    "description": "Acute mental health treatment for adolescents, adults, and seniors",
+    "lat": 29.7130,
+    "lon": -95.4830
+  },
+  {
+    "name": "Cypress Creek Hospital",
+    "address": "17750 Cali Dr, Houston, TX 77090",
+    "description": "Inpatient psychiatric and substance abuse treatment for teens & adults",
+    "lat": 30.0150,
+    "lon": -95.4510
+  },
+  {
+    "name": "Flourish Mental Health & TMS Center",
+    "address": "950 Echo Ln #350, Houston, TX 77024",
+    "description": "Outpatient care including TMS therapy and counseling",
+    "lat": 29.7790,
+    "lon": -95.5170
+  },
+  {
+    "name": "Moore Mental Health & Behavioral Services",
+    "address": "13810 Champion Forest Dr Suite 150, Houston, TX 77069",
+    "description": "Outpatient therapy and behavioral health services",
+    "lat": 29.9870,
+    "lon": -95.5250
   }
 ]
-
