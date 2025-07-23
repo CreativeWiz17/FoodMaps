@@ -1,73 +1,38 @@
 [
   {
-    "name": "The Menninger Clinic",
-    "address": "12301 Main St, Houston, TX 77035",
-    "description": "Inpatient and outpatient psychiatric care, addiction treatment, trauma recovery",
-    "lat": 29.6300,
-    "lon": -95.4780
-  },
-  {
-    "name": "UTHealth Harris County Psychiatric Center",
-    "address": "2800 S MacGregor Way, Houston, TX 77021",
-    "description": "Largest inpatient psychiatric provider in Houston; 24/7 crisis care",
-    "lat": 29.7100,
-    "lon": -95.3620
-  },
-  {
-    "name": "Cypress Creek Hospital",
-    "address": "17750 Cali Dr, Houston, TX 77090",
-    "description": "Inpatient psychiatric and substance abuse treatment for teens & adults",
-    "lat": 30.0150,
-    "lon": -95.4510
-  },
-  {
-    "name": "Houston Behavioral Healthcare Hospital",
-    "address": "2801 Gessner Rd, Houston, TX 77080",
-    "description": "Inpatient & outpatient care, detox, adolescent services",
-    "lat": 29.8290,
-    "lon": -95.5390
-  }
-
-  {
-    "name": "Kingwood Pines Hospital",
-    "address": "2001 Ladbrook Dr, Kingwood, TX 77339",
-    "description": "Inpatient psychiatric services for children, teens, and adults; substance abuse treatment",
-    "lat": 30.0510,
-    "lon": -95.2490
-  },
-  {
-    "name": "West Oaks Hospital",
-    "address": "6500 Hornwood Dr, Houston, TX 77074",
-    "description": "Psychiatric and substance abuse inpatient services for children, teens, and adults",
-    "lat": 29.7050,
-    "lon": -95.5070
-  },
-  {
-    "name": "Behavioral Hospital of Bellaire",
-    "address": "5314 Dashwood Dr, Houston, TX 77081",
-    "description": "Acute mental health treatment for adolescents, adults, and seniors; outpatient programs",
-    "lat": 29.7130,
-    "lon": -95.4830
-  },
-  {
     "name": "The Harris Center – NeuroPsychiatric Center",
     "address": "1502 Ben Taub Loop, Houston, TX 77030",
-    "description": "24/7 crisis hospital for psychiatric emergencies; part of Harris Center network",
+    "description": "24/7 crisis psychiatric hospital; accepts uninsured patients; part of Harris Center network",
     "lat": 29.7135,
     "lon": -95.3980
   },
   {
-    "name": "Intracare North Hospital",
-    "address": "1120 Cypress Station Dr, Houston, TX 77090",
-    "description": "Inpatient and outpatient psychiatric care for children, teens, and adults",
-    "lat": 30.0120,
-    "lon": -95.4380
+    "name": "Ben Taub Hospital – Psychiatry Department",
+    "address": "1504 Taub Loop, Houston, TX 77030",
+    "description": "Public hospital with psychiatric services; part of Harris Health System; low-income access",
+    "lat": 29.7130,
+    "lon": -95.3995
   },
   {
-    "name": "Houston Methodist Behavioral Health",
-    "address": "6565 Fannin St, Houston, TX 77030",
-    "description": "Inpatient and outpatient psychiatric care; mood disorders, suicidality, and trauma",
+    "name": "UTHealth Harris County Psychiatric Center",
+    "address": "2800 S MacGregor Way, Houston, TX 77021",
+    "description": "Largest inpatient psychiatric facility in Houston; publicly funded; accepts uninsured & Medicaid",
     "lat": 29.7100,
-    "lon": -95.3980
+    "lon": -95.3620
+  },
+  {
+    "name": "Legacy Community Health – Behavioral Health",
+    "address": "3311 Richmond Ave, Houston, TX 77098",
+    "description": "Nonprofit clinic with counseling and psychiatry; sliding scale & Medicaid",
+    "lat": 29.7356,
+    "lon": -95.4250
+  },
+  {
+    "name": "Hope and Healing Center & Institute",
+    "address": "717 Sage Rd, Houston, TX 77056",
+    "description": "Faith-based nonprofit offering free mental health support groups and therapy referrals",
+    "lat": 29.7602,
+    "lon": -95.4619
   }
 ]
+
