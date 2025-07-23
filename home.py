@@ -153,7 +153,7 @@ if category == "Skills":
         ).add_to(m)
 
 # 🧠 Mental Health & Rehab Markers
-if category == "Mental Health":
+if category == "Mental Wellbeing":
     for place in mental_data:
         popup_html = f"""
         <div style="width: 250px;">
