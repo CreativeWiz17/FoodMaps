@@ -4,3 +4,4 @@ streamlit_folium
 pandas
 numpy
 requests
+streamlit-js-eval

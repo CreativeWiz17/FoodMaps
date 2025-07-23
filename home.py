@@ -4,11 +4,12 @@ import streamlit as st
 import folium
 from streamlit_folium import st_folium
 import json
+from streamlit_js_eval import streamlit_js_eval
 
 # --- Page Configuration ---
 st.set_page_config(
-    page_title="FoodMap",
-    page_icon="🥫️",
+    page_title="Houston Pathways",
+    page_icon="🗺️",
     layout="wide"
 )
 
@@ -38,7 +39,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Set the title of the web app
-st.markdown('<div class="main-title">🥫️ Houston FoodMap</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">🗺️ Houston Pathways</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Find the help you deserve</div>', unsafe_allow_html=True)
 
 # Add a sidebar for user controls (optional)
@@ -61,7 +62,17 @@ map_style = st.sidebar.selectbox("🗺️ Map Style",
 key="map_style_select")
 
 # Sidebar: Choose district to highlight
-district = st.sidebar.selectbox("🏙️ Highlight District", ["None", "Downtown", "Midtown", "Museum District"], key="district_select")
+district_locations = {
+    "Downtown": [29.7589, -95.3677],
+    "Midtown": [29.7416, -95.3728],
+    "Museum District": [29.7216, -95.3895],
+    "Montrose": [29.7440, -95.3910],
+    "Heights": [29.7980, -95.3995],
+    "EaDo": [29.7523, -95.3422],
+    "Galleria": [29.7390, -95.4670],
+    "Medical Center": [29.7079, -95.4010]
+}
+district = st.sidebar.selectbox("🏙️ Highlight District", ["None"] + list(district_locations.keys()), key="district_select")
 
 # Sidebar: Choose category to display
 category = st.sidebar.selectbox("📂 Show Category", ["Food", "Mental Wellbeing", "Skills"], key="category_select")
@@ -101,12 +112,6 @@ folium.Circle(
 ).add_to(m)
 
 # Example: Highlight selected district with a circle (fixed size that doesn't change with zoom)
-district_locations = {
-    "Downtown": [29.7589, -95.3677],
-    "Midtown": [29.7416, -95.3728],
-    "Museum District": [29.7216, -95.3895]
-}
-
 if district != "None":
     folium.Circle(
         location=district_locations[district],
@@ -122,16 +127,16 @@ if district != "None":
 if category == "Food":
     for place in food_data:
         popup_html = f"""
-        <div style="width: 250px;">
+        <div style="width: 250px; font-size: 16px;">
             <strong>{place['name']}</strong><br>
             <em>{place['address']}</em><br>
-            <p style="font-size: 14px;">{place['description']}</p>
+            <p>{place['description']}</p>
         </div>
         """
         folium.Marker(
             location=[place["lat"], place["lon"]],
             popup=folium.Popup(popup_html, max_width=300),
-            tooltip="Food Donation",
+            tooltip="Food Donation Location - Click for details",
             icon=folium.Icon(color="red", icon="cutlery", prefix="fa")
         ).add_to(m)
 
@@ -139,16 +144,16 @@ if category == "Food":
 if category == "Skills":
     for place in adult_data:
         popup_html = f"""
-        <div style="width: 250px;">
+        <div style="width: 250px; font-size: 16px;">
             <strong>{place['name']}</strong><br>
             <em>{place['address']}</em><br>
-            <p style="font-size: 14px;">{place['description']}</p>
+            <p>{place['description']}</p>
         </div>
         """
         folium.Marker(
             location=[place["lat"], place["lon"]],
             popup=folium.Popup(popup_html, max_width=300),
-            tooltip="Adult Literacy",
+            tooltip="Adult Literacy Center - Click for details",
             icon=folium.Icon(color="orange", icon="book", prefix="fa")
         ).add_to(m)
 
@@ -156,21 +161,40 @@ if category == "Skills":
 if category == "Mental Wellbeing":
     for place in mental_data:
         popup_html = f"""
-        <div style="width: 250px;">
+        <div style="width: 250px; font-size: 16px;">
             <strong>{place['name']}</strong><br>
             <em>{place['address']}</em><br>
-            <p style="font-size: 14px;">{place['description']}</p>
+            <p>{place['description']}</p>
         </div>
         """
         folium.Marker(
             location=[place["lat"], place["lon"]],
             popup=folium.Popup(popup_html, max_width=300),
-            tooltip="Mental Health",
+            tooltip="Mental Health Resource - Click for details",
             icon=folium.Icon(color="purple", icon="medkit", prefix="fa")
         ).add_to(m)
 
+# 📍 Live Location Marker
+loc = streamlit_js_eval(js_expressions="navigator.geolocation.getCurrentPosition", key="get_user_location")
+if loc and "coords" in loc:
+    user_lat = loc["coords"]["latitude"]
+    user_lon = loc["coords"]["longitude"]
+    folium.Marker(
+        location=[user_lat, user_lon],
+        popup="📍 You are here",
+        tooltip="Your Current Location",
+        icon=folium.Icon(color="black", icon="user", prefix="fa")
+    ).add_to(m)
+
 # Display the map in Streamlit, filling most of the screen
 st_folium(m, width=1200, height=800)
+
+# Accessibility note
+st.markdown("""
+<div style="text-align: center; font-size: 14px; color: #555;">
+Use your keyboard arrows or mouse to navigate the map. Zoom with +/- keys or scroll.
+</div>
+""", unsafe_allow_html=True)
 
 # Add a footer for polish and professionalism
 st.markdown("""
@@ -181,7 +205,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---
-# How this works: (NO DATA CURRENTLY)
+# How this works: (NO LIVE DATA CURRENTLY)
 # - Streamlit runs the app and displays the UI in your browser.
 # - Folium creates the interactive map (using Leaflet.js under the hood).
 # - streamlit_folium bridges Folium maps into Streamlit apps.
@@ -191,6 +215,6 @@ st.markdown("""
 # - Use Streamlit widgets (sliders, dropdowns, etc.) to let users control the map.
 #
 # To run this app:
-# 1. Install dependencies: pip install streamlit folium streamlit-folium
+# 1. Install dependencies: pip install streamlit folium streamlit-folium streamlit-js-eval
 # 2. Run: streamlit run home.py
 # 3. Open the URL provided in your terminal to view the app.
