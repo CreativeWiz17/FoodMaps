@@ -195,7 +195,7 @@ if loc and "coords" in loc:
     user_lon = loc["coords"]["longitude"]
     folium.Marker(
         location=[user_lat, user_lon],
-        popup="📍 You are here",
+        popup=folium.Popup("<b>📍 You are here</b>", max_width=150),
         tooltip="Your Current Location",
         icon=folium.Icon(color="black", icon="user", prefix="fa")
     ).add_to(m)
