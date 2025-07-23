@@ -42,7 +42,7 @@ st.markdown("""
 st.markdown('<div class="main-title">🗺️ Houston Pathways</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Find the help you deserve</div>', unsafe_allow_html=True)
 
-# Add a sidebar for user controls (optional)
+# Add a sidebar for user controls
 st.sidebar.header("🛠️ Map Controls")
 
 # Set the default location to the center of Houston
@@ -52,13 +52,13 @@ houston_coords = [29.7345, -95.3819]  # Latitude, Longitude
 zoom = st.sidebar.slider("🔍 Zoom Level", min_value=12, max_value=20, value=14, key="zoom_slider")
 
 # Sidebar: Choose map style
-map_style = st.sidebar.selectbox("🗺️ Map Style", 
+map_style = st.sidebar.selectbox("🗺️ Map Style",
 [
     "OpenStreetMap",
     "CartoDB positron",
     "CartoDB dark_matter",
     "Esri.WorldImagery"
-], 
+],
 key="map_style_select")
 
 # Sidebar: Choose district to highlight
@@ -85,23 +85,48 @@ with open(".data/skills.json", "r") as f:
 with open(".data/mental.json", "r") as f:
     mental_data = json.load(f)
 
-# Create a Folium map centered on Houston with a softer tile style
-m = folium.Map(
-    location=houston_coords,
-    zoom_start=zoom,
-    tiles=map_style  # map style
+# 📍 Get user's current location
+loc = streamlit_js_eval(
+    js_expressions="""
+    new Promise(function(resolve, reject) {
+        navigator.geolocation.getCurrentPosition(
+            function(pos) {
+                resolve({coords: {latitude: pos.coords.latitude, longitude: pos.coords.longitude}});
+            },
+            function(err) {
+                reject(err);
+            }
+        );
+    });
+    """,
+    key="get_user_location"
 )
 
-# Example: Add a marker for downtown Houston with a softer color (green)
+# Set default map center (Houston)
+map_center = houston_coords
+
+# If location is available, update the map center
+if loc and "coords" in loc:
+    user_lat = loc["coords"]["latitude"]
+    user_lon = loc["coords"]["longitude"]
+    map_center = [user_lat, user_lon]
+
+# Create the map AFTER geolocation is ready
+m = folium.Map(
+    location=map_center,
+    zoom_start=zoom,
+    tiles=map_style
+)
+
+# Add a marker for downtown Houston
 folium.Marker(
     location=houston_coords,
     popup="Ion Houston Office",
     tooltip="BAM Houston Location",
-    icon=folium.Icon(color="blue", icon="info-sign")  # How will signs look?
+    icon=folium.Icon(color="blue", icon="info-sign")
 ).add_to(m)
 
-# You can add more markers or features here
-# Example: Add a circle for the Houston metro area (approximate)
+# Add a circle for the Houston metro area (approximate)
 folium.Circle(
     location=houston_coords,
     radius=20000,  # meters
@@ -111,11 +136,11 @@ folium.Circle(
     popup="Approximate Houston Metro Area"
 ).add_to(m)
 
-# Example: Highlight selected district with a circle (fixed size that doesn't change with zoom)
+# Highlight selected district with a circle
 if district != "None":
     folium.Circle(
         location=district_locations[district],
-        radius=500,  # Fixed radius in meters
+        radius=500,
         color="green",
         fill=True,
         fill_color="green",
@@ -174,33 +199,18 @@ if category == "Mental Wellbeing":
             icon=folium.Icon(color="purple", icon="medkit", prefix="fa")
         ).add_to(m)
 
-# 📍 Live Location Marker
-loc = streamlit_js_eval(
-    js_expressions="""
-    new Promise(function(resolve, reject) {
-        navigator.geolocation.getCurrentPosition(
-            function(pos) {
-                resolve({coords: {latitude: pos.coords.latitude, longitude: pos.coords.longitude}});
-            },
-            function(err) {
-                reject(err);
-            }
-        );
-    });
-    """,
-    key="get_user_location"
-)
+# 📍 Add live location marker only if available
 if loc and "coords" in loc:
     user_lat = loc["coords"]["latitude"]
     user_lon = loc["coords"]["longitude"]
     folium.Marker(
         location=[user_lat, user_lon],
-        popup=folium.Popup("<b>📍 You are here</b>", max_width=150),
+        popup="📍 You are here",
         tooltip="Your Current Location",
         icon=folium.Icon(color="black", icon="user", prefix="fa")
     ).add_to(m)
-
-# Display the map in Streamlit, filling most of the screen
+    
+# Display the map
 st_folium(m, width=1200, height=800)
 
 # Accessibility note
@@ -210,7 +220,7 @@ Use your keyboard arrows or mouse to navigate the map. Zoom with +/- keys or scr
 </div>
 """, unsafe_allow_html=True)
 
-# Add a footer for polish and professionalism
+# Add a footer
 st.markdown("""
     <div class="footer">
     Made with ❤️ using Streamlit & Folium<br>
@@ -219,15 +229,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---
-# How this works: (NO LIVE DATA CURRENTLY)
+# How this works:
 # - Streamlit runs the app and displays the UI in your browser.
 # - Folium creates the interactive map (using Leaflet.js under the hood).
 # - streamlit_folium bridges Folium maps into Streamlit apps.
-#
-# To add more features:
-# - Add more folium.Marker, folium.Circle, folium.PolyLine, etc. to the map.
-# - Use Streamlit widgets (sliders, dropdowns, etc.) to let users control the map.
-#
+
 # To run this app:
 # 1. Install dependencies: pip install streamlit folium streamlit-folium streamlit-js-eval
 # 2. Run: streamlit run home.py
